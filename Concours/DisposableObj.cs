@@ -8,10 +8,12 @@ namespace Concours
 {
     public class DisposableObj : IDisposable
     {
+        public bool wasDisposedMoreThanOnce { get; internal set; } = false;
         public bool isDisposed { get; internal set; } = false;
 
         public void Dispose()
         {
+            this.wasDisposedMoreThanOnce = this.isDisposed;
             this.isDisposed = true;
         }
     }

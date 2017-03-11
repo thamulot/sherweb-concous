@@ -90,6 +90,7 @@ namespace Concours
             ListUtils.DisposeAll(list);
 
             Assert.IsTrue(obj.isDisposed);
+            Assert.IsFalse(obj.wasDisposedMoreThanOnce);
         }
     }
 }
