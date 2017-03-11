@@ -1,4 +1,9 @@
-﻿Ligne 12, devrait être " j = count -1" sinon la ligne 15 éclate en index out of range.
+﻿12, 16, 24, 32, 36
+
+Ligne 12, devrait être " j = count -1" sinon la ligne 15 éclate en index out of range.
 Ligne 16 devrait utiliser le "tmp"...
+Ligne 24, le Clear se fait avant d'évaluer le IEnumerable, les IDisposable ne seront donc pas disposé.
 Ligne 32, tu cherches vraiment le trouble si jamais tous les obj ne sont pas des IDisposable tu vas avoir un InvalidCastException rigth away
 Ligne 36 devrait disparaitre puisque la fin du "using" va générer un dispose... on disposerait donc 2 fois le même objet.
+
+https://github.com/thamulot/sherweb-concous
